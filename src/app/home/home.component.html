@@ -1,0 +1,56 @@
+<nav class="bg-blue-800 border-gray-200 dark:bg-white text-white">
+  <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
+    <a href="https://flowbite.com" class="flex items-center">
+      <img src="assets/logo.png" class="h-8 mr-3" alt="Flowbite Logo" />
+      <span class="self-center text-md font-semibold whitespace-nowrap dark:text-white">Nothern Luzon Adventist College
+        <b class="text-yellow-300">ACADEMY</b></span>
+    </a>
+    <div class="flex items-center text-white">
+      <a href="#" class="text-sm  text-white dark:text-blue-500 hover:underline">
+        <i class="fa fa-sign-out mr-1 " aria-hidden="true"></i>
+        Log-out
+      </a>
+    </div>
+  </div>
+</nav>
+<nav class="bg-white text-gray-800 dark:bg-gray-700">
+  <div class="max-w-screen-xl px-4 py-3 mx-auto">
+
+    <div class="mb-4 dark:border-gray-700">
+      <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent"
+        role="tablist">
+        <li class="mr-2" role="presentation">
+          <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile"
+            type="button" role="tab" aria-controls="profile" aria-selected="false" routerLink="/home/stud-approval">Home</button>
+        </li>
+        <li class="mr-2" role="presentation">
+          <button
+            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+            id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard"
+            aria-selected="false" routerLink="/home/proof">Students</button>
+        </li>
+        <li class="mr-2" role="presentation">
+          <button
+            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+            id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings"
+            aria-selected="false" routerLink="/home/report">Report</button>
+        </li>
+      </ul>
+    </div>
+    <div id="myTabContent">
+      <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
+        aria-labelledby="profile-tab">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel"
+        aria-labelledby="dashboard-tab">
+        <app-proof-of-payment></app-proof-of-payment>
+      </div>
+      <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel"
+        aria-labelledby="settings-tab">
+        <app-report></app-report>
+      </div>
+    </div>
+
+  </div>
+</nav>
