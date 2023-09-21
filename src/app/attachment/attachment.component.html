@@ -14,7 +14,7 @@
   </a>
     <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
       <div>
-          <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
+          <img class="h-auto max-w-full rounded-lg" src="{{img}}" alt="">
       </div>
       <div>
           <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
@@ -31,8 +31,8 @@
   <div class="p-5 mt-10">
     <div id="alert-additional-content-1" class="p-4 mb-5 text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800" role="alert">
       <div class="flex items-center">
-        <h3 class="text-lg font-medium">Ayson, Arvin S.</h3>
-        <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">Grade 11 - HUMSS</span>
+        <h3 class="text-lg font-medium">{{name}}</h3>
+        <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{grade}}</span>
       </div>
       <div class="mt-2 mb-4 text-sm">
         More info about this info alert goes here. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
@@ -104,12 +104,12 @@
               </tr>
               <tr class="font-semibold bg-green-200 p-4 text-gray-900 dark:text-white">
                   <th scope="row" class="px-6 py-2 text-base">Total Downpayment:</th>
-                  <td class="px-6 py-2 text-end"> 1,500.00 </td>
+                  <td class="px-6 py-2 text-end"> {{downpayment}} </td>
               </tr>
           </tfoot>
       </table>
       <br>
-      <button type="button" class="text-white max-w-md bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Confirm</button>
+      <button type="button" class="text-white max-w-md bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Approve</button>
       <button routerLink="/home/stud-approval" type="button" class="mr-2 mt-2 text-white max-w-md bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Cancel</button>
 
   </div>

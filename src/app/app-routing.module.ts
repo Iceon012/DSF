@@ -6,25 +6,29 @@ import { StudentApprovalComponent } from './student-approval/student-approval.co
 import { ProofOfPaymentComponent } from './proof-of-payment/proof-of-payment.component';
 import { ReportComponent } from './report/report.component';
 import { AttachmentComponent } from './attachment/attachment.component';
+import { authGuard } from './authentication/auth.guard';  // Corrected naming convention
 
 const routes: Routes = [
-  {path: 'login', component:LoginComponent},
-  {path: 'home', component:HomeComponent,
-  children:[
-    {path: 'stud-approval', component:StudentApprovalComponent},
-    {path: 'proof', component:ProofOfPaymentComponent},
-    {path: 'attachment', component:AttachmentComponent},
-    {path: 'report', component:ReportComponent},
-    {
-      path: '',
-      redirectTo: 'stud-approval',
-      pathMatch: 'full'
-    }
-  ]
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [authGuard],  // Corrected naming convention
+    children: [
+      { path: 'stud-approval', component: StudentApprovalComponent },
+      { path: 'proof', component: ProofOfPaymentComponent },
+      { path: 'attachment', component: AttachmentComponent },
+      { path: 'report', component: ReportComponent },
+      {
+        path: '',
+        redirectTo: 'stud-approval',
+        pathMatch: 'full'
+      }
+    ]
   },
   {
-    path:'',
-    redirectTo:'/login',
+    path: '',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];

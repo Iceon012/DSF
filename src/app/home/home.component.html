@@ -6,7 +6,7 @@
         <b class="text-yellow-300">ACADEMY</b></span>
     </a>
     <div class="flex items-center text-white">
-      <a href="#" class="text-sm  text-white dark:text-blue-500 hover:underline">
+      <a (click)="logout()" class="text-sm  text-white dark:text-blue-500 hover:underline">
         <i class="fa fa-sign-out mr-1 " aria-hidden="true"></i>
         Log-out
       </a>
@@ -26,29 +26,15 @@
         <li class="mr-2" role="presentation">
           <button
             class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
-            id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard"
-            aria-selected="false" routerLink="/home/proof">Students</button>
-        </li>
-        <li class="mr-2" role="presentation">
-          <button
-            class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
             id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings"
             aria-selected="false" routerLink="/home/report">Report</button>
         </li>
       </ul>
     </div>
     <div id="myTabContent">
-      <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
+      <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
         aria-labelledby="profile-tab">
         <router-outlet></router-outlet>
-      </div>
-      <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel"
-        aria-labelledby="dashboard-tab">
-        <app-proof-of-payment></app-proof-of-payment>
-      </div>
-      <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel"
-        aria-labelledby="settings-tab">
-        <app-report></app-report>
       </div>
     </div>
 
