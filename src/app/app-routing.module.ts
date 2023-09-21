@@ -6,14 +6,14 @@ import { StudentApprovalComponent } from './student-approval/student-approval.co
 import { ProofOfPaymentComponent } from './proof-of-payment/proof-of-payment.component';
 import { ReportComponent } from './report/report.component';
 import { AttachmentComponent } from './attachment/attachment.component';
-import { authGuard } from './authentication/auth.guard';  // Corrected naming convention
+import { authGuard } from './authentication/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [authGuard],  // Corrected naming convention
+    canActivate: [authGuard],
     children: [
       { path: 'stud-approval', component: StudentApprovalComponent },
       { path: 'proof', component: ProofOfPaymentComponent },

@@ -14,4 +14,8 @@ export class PostService {
     return this.http.get(this.url + 'getStudents.php');
   }
 
+  Students() {
+    return this.http.get(this.url + 'students.php');
+  }
+
 }
