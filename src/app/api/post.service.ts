@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PostService {
+  students() {
+    throw new Error('Method not implemented.');
+  }
 
   url = 'http://localhost/nlacacademy/DSF/'
 

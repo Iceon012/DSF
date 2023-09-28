@@ -3,25 +3,37 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-attachment',
   templateUrl: './attachment.component.html',
-  styleUrls: ['./attachment.component.css']
+  styleUrls: ['./attachment.component.css'],
 })
 export class AttachmentComponent implements OnInit {
-  src = "http://localhost/nlacacademy/Proof/";
-
-  name: string | null = null;
-  grade: string | null = null;
-  downpayment: string | null = null;
-  image: string | null = null;
-  img: string | null = null;
+  attachment: any
+  payments: any
+  grade: any
+  name: any
+  totalAmount: any
 
   ngOnInit(): void {
-    this.name = localStorage.getItem('Name');
-    this.grade = localStorage.getItem('Grade');
-    this.downpayment = localStorage.getItem('TotalAmt');
-    this.image = localStorage.getItem('img');
+    this.payments = localStorage.getItem('payments');
+    this.grade = localStorage.getItem('grade');
+    this.name = localStorage.getItem('name');
+    this.attachment = JSON.parse(this.payments);
 
-    if (this.image) {
-      this.img = this.src + this.image;
-    }
+    // const payment = this.attachment.filter((p:any)=>p.amount_paid)
+    const paymentsWithAmount = this.attachment.filter(
+      (p: any) =>
+        typeof p.amount_paid === 'string' && parseFloat(p.amount_paid) > 0
+    );
+
+    const totalAmountPaid = paymentsWithAmount.reduce(
+      (sum: number, p: any) => sum + parseFloat(p.amount_paid),
+      0
+    );
+
+    this.totalAmount = totalAmountPaid
+
+    console.log(paymentsWithAmount);
+    console.log(totalAmountPaid);
+
+    console.log(this.attachment);
   }
 }

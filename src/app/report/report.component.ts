@@ -22,7 +22,6 @@ export class ReportComponent {
   }
 
   selectedFilter(event: any) {
-    // console.log(event.target.value)
     this.filtered = event.target.value
 
     console.log(this.filtered)
